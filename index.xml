@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yang Wang on DEFT.DEV</title>
+    <link>https://deft.dev/</link>
+    <description>Recent content in Yang Wang on DEFT.DEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright © 2019 by Yang Wang. All Rights Reserved.</copyright>
+    <lastBuildDate>Thu, 02 May 2019 20:50:34 +0800</lastBuildDate>
+    
+	<atom:link href="https://deft.dev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo 生成静态网站</title>
+      <link>https://deft.dev/post/hugo-usage/</link>
+      <pubDate>Thu, 02 May 2019 22:54:58 +0800</pubDate>
+      
+      <guid>https://deft.dev/post/hugo-usage/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
