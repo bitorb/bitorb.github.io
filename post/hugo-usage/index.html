@@ -40,20 +40,38 @@
 </div>
 <div class="content">
 
+<div class="post-meta">
+  <div id="date"> 2019-05-02 22:54:58 </div>
+  
+    <ul id="tags">
+      
+        <li> <a href="https://deft.dev/tags/hugo">hugo</a> </li>
+      
+    </ul>
+  
+</div>
 
-<aside id="meta">
-  <div>
-    <div id="date"> 2019-05-02 22:54:58 </div>
-    
-    
-      <ul id="tags">
-	
-          <li> <a href="https://deft.dev/tags/hugo">hugo</a> </li>
-	
-      </ul>
-    
-  </div>
-</aside>
+
+<p>hugo 确实方便，可以专注于 markdown 写内容，模版负责布局与风格，与内容完全分离，生成全站网页基本秒出。</p>
+
+<h2 id="在-draft-模式下的开始写内容">在 draft 模式下的开始写内容</h2>
+
+<p>将项目及子模块的最新的内容从远端同步到本地，然后以 draft 模式启动内置 webserver。</p>
+
+<pre><code>$ git pull origin 
+$ git submodule update --remote
+$ hugo server -D
+</code></pre>
+
+<h2 id="deploy-到各个远端主机">deploy 到各个远端主机</h2>
+
+<h3 id="github">github</h3>
+
+<p>先看一下要发布的内容有没有问题，然后退出 server 运行 hugo 命令生成网站。</p>
+
+<pre><code>$ hugo server
+$ hugo
+</code></pre>
 
 
 	</div><div class="footer">
