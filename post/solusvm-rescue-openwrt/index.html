@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DEFT.DEV | solusvm下 rescue 模式安装 openwrt</title>
+  <link rel="shortcut icon" type='image/x-icon' href="/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/pure/1.0.0/pure-min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css">
+  <link rel="stylesheet" href="/css/hugo-pure.css">
+</head>
+<body>
+    <div id="layout">
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+
+
+<div id="menu">
+  <div class="pure-menu">
+    <div class="pure-menu-heading">
+      DEFT.DEV
+    </div>
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item">
+        <a class="pure-menu-link" href="/">首页</a>
+      </li>
+      
+	<li class="pure-menu-item">
+          <a class="pure-menu-link" href="/categories/trial/">瞎捣鼓</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+<div id="main"><div class="header">
+  <h1>solusvm下 rescue 模式安装 openwrt</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+<div class="post-meta">
+  <div id="date"> 2019-12-11 21:26:31 </div>
+  
+    <ul id="tags">
+      
+        <li> <a href="https://deft.dev/tags/vps">vps</a> </li>
+      
+        <li> <a href="https://deft.dev/tags/solusvm">solusvm</a> </li>
+      
+        <li> <a href="https://deft.dev/tags/openwrt">openwrt</a> </li>
+      
+        <li> <a href="https://deft.dev/tags/virmach">virmach</a> </li>
+      
+    </ul>
+  
+</div>
+
+
+<p>今年黑五跟风去 virmach 抢了几个廉价 VPS，其中有个年付 1刀的，内存竟然只有 100M，virmach 提供的几个系统都装不上去。
+查了半天，发现可以通过 Rescue Mode 安装 openwrt，配下网络、防火墙，也能凑活用。</p>
+
+<h2 id="安装-openwrt">安装 openwrt</h2>
+
+<p>virmach 的 solusvm 提供了救援模式，有三个救援系统可用, 这里使用了 Roaring Lionus。进去后使用 apt 命令安装 wget。</p>
+
+<pre><code>apt update &amp;&amp; apt install wget
+</code></pre>
+
+<p>然后通过 fdisk -l 看看 vps 的硬盘，通常都是 /dev/vda, 下面开始 dd 安装 openwrt 18.06.5 x64</p>
+
+<pre><code>wget -qO- 'http://downloads.openwrt.org/releases/18.06.5/targets/x86/64/openwrt-18.06.5-x86-64-combined-ext4.img.gz' | gunzip | dd of=/dev/vda
+</code></pre>
+
+<p>装好后，退出 Rescue Mode，就可以进入系统了。</p>
+
+<h2 id="配置-openwrt">配置 openwrt</h2>
+
+<p>solusvm 面板找到 vps 的 network ，点击 ip 弹出窗口有 gateway 和 Netmask，进入 vnc 配置网络接口。
+eth0 的 lan 改为 wan，注释掉 option type bridge 这行，最后在 netmask 下面再加一行 gateway，如下：</p>
+
+<pre><code>vi /etc/config/network
+
+config interface 'wan'
+	option ifname 'eth0'
+	# option type bridge
+	option proto 'static'
+	option ipaddr '107.175.x.x'
+	option netmask '255.255.255.224'
+	option gateway '107.175.x.x'
+	option ip6assign '60'
+
+/etc/init.d/network restart
+</code></pre>
+
+<p>上面改好重启后，应该就可以 ping 通了，最后下面的 firewall 改完就可以 ssh 了。
+找到 option name wan 这个 zone, 把 input 和 forward 后面的 REJECT 或 DROP 全改成 ACCEPT。</p>
+
+<pre><code>vi /etc/config/firewall
+...
+config zone
+	option name		wan
+	list   network		'wan'
+	list   network		'wan6'
+	option input		ACCEPT
+	option output		ACCEPT
+	option forward		ACCEPT
+...
+
+/etc/init.d/firewall restart
+</code></pre>
+
+<p>最后设置个密码，避免裸奔。</p>
+
+<pre><code>passwd
+</code></pre>
+
+<p>最好配置通过密钥免密码登录，openwrt 里用 dropbear 提供 ssh 服务。</p>
+
+<pre><code>cat id_rsa.pub | ssh root@YOUR_OPENWRT_IPADDR &quot;cat &gt;&gt; /etc/dropbear/authorized_keys&quot;
+</code></pre>
+
+<p>如果要装软件，还需要设置 DNS，需要把所有的 DNS 解析请求 forwarding 到一个外部 Server 去解析，如大名顶顶的 8.8.8.8。</p>
+
+<pre><code>uci show dhcp
+...
+
+uci add_list dhcp.@dnsmasq[0].server=&quot;8.8.8.8&quot;
+uci add_list dhcp.@dnsmasq[0].server=&quot;8.8.4.4&quot;
+uci commit dhcp
+/etc/init.d/dnsmasq restart
+
+ping openwrt.org
+</code></pre>
+
+
+	</div><div class="footer">
+  <small>Copyright © 2019 by Yang Wang. All Rights Reserved.</small>
+</div>
+</div>
+    </div>
+    <script src="/js/ui.js"></script>
+  </body>
+</html>

@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright © 2019 by Yang Wang. All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 02 May 2019 22:54:58 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Dec 2019 21:26:31 +0800</lastBuildDate>
     
 	<atom:link href="https://deft.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>openwrt</title>
+      <link>https://deft.dev/tags/openwrt/</link>
+      <pubDate>Wed, 11 Dec 2019 21:26:31 +0800</pubDate>
+      
+      <guid>https://deft.dev/tags/openwrt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>solusvm</title>
+      <link>https://deft.dev/tags/solusvm/</link>
+      <pubDate>Wed, 11 Dec 2019 21:26:31 +0800</pubDate>
+      
+      <guid>https://deft.dev/tags/solusvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>virmach</title>
+      <link>https://deft.dev/tags/virmach/</link>
+      <pubDate>Wed, 11 Dec 2019 21:26:31 +0800</pubDate>
+      
+      <guid>https://deft.dev/tags/virmach/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vps</title>
+      <link>https://deft.dev/tags/vps/</link>
+      <pubDate>Wed, 11 Dec 2019 21:26:31 +0800</pubDate>
+      
+      <guid>https://deft.dev/tags/vps/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>

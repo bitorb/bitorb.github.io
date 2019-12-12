@@ -4,7 +4,54 @@
   
   <url>
     <loc>https://deft.dev/categories/</loc>
-    <lastmod>2019-05-02T22:54:58+08:00</lastmod>
+    <lastmod>2019-12-11T21:26:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deft.dev/post/</loc>
+    <lastmod>2019-12-11T21:26:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deft.dev/tags/</loc>
+    <lastmod>2019-12-11T21:26:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deft.dev/tags/openwrt/</loc>
+    <lastmod>2019-12-11T21:26:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deft.dev/tags/solusvm/</loc>
+    <lastmod>2019-12-11T21:26:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deft.dev/post/solusvm-rescue-openwrt/</loc>
+    <lastmod>2019-12-11T21:26:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deft.dev/categories/trial/</loc>
+    <lastmod>2019-12-11T21:26:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deft.dev/tags/virmach/</loc>
+    <lastmod>2019-12-11T21:26:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deft.dev/tags/vps/</loc>
+    <lastmod>2019-12-11T21:26:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -14,25 +61,7 @@
   </url>
   
   <url>
-    <loc>https://deft.dev/post/</loc>
-    <lastmod>2019-05-02T22:54:58+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://deft.dev/tags/</loc>
-    <lastmod>2019-05-02T22:54:58+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://deft.dev/tags/hugo/</loc>
-    <lastmod>2019-05-02T22:54:58+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://deft.dev/categories/trial/</loc>
     <lastmod>2019-05-02T22:54:58+08:00</lastmod>
     <priority>0</priority>
   </url>

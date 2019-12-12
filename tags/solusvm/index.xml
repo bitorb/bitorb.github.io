@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on DEFT.DEV</title>
-    <link>https://deft.dev/post/</link>
-    <description>Recent content in Posts on DEFT.DEV</description>
+    <title>solusvm on DEFT.DEV</title>
+    <link>https://deft.dev/tags/solusvm/</link>
+    <description>Recent content in solusvm on DEFT.DEV</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright © 2019 by Yang Wang. All Rights Reserved.</copyright>
     <lastBuildDate>Wed, 11 Dec 2019 21:26:31 +0800</lastBuildDate>
     
-	<atom:link href="https://deft.dev/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://deft.dev/tags/solusvm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>https://deft.dev/post/solusvm-rescue-openwrt/</guid>
       <description>今年黑五跟风去 virmach 抢了几个廉价 VPS，其中有个年付 1刀的，内存竟然只有 100M，virmach 提供的几个系统都装不上去。 查了半天，发现可以通过</description>
-    </item>
-    
-    <item>
-      <title>Hugo 生成静态网站</title>
-      <link>https://deft.dev/post/hugo-usage/</link>
-      <pubDate>Thu, 02 May 2019 22:54:58 +0800</pubDate>
-      
-      <guid>https://deft.dev/post/hugo-usage/</guid>
-      <description>hugo 确实方便，可以专注于 markdown 写内容，模版负责布局与风格，与内容完全分离，生成全站网页基本秒出。 在 draft 模式下的开始写内容 将项目及子模块的最新的内容从</description>
     </item>
     
   </channel>
